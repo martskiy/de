@@ -4,6 +4,57 @@ document.addEventListener("DOMContentLoaded", function () {
     Telegram.WebApp.expand();
   }
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const getUserId = window.Telegram.WebApp.initDataUnsafe.user.id;
+    const userId = getUserId;
+    const balance = localStorage.getItem("balance");
+    const clickedKick = localStorage.getItem("clickedKick");
+    const clickedPublic = localStorage.getItem("clickedPublic");
+    const dogSkinP = localStorage.getItem("dogSkinP");
+    const legendarySkinP = localStorage.getItem("legendarySkinP");
+    const lastActivity = localStorage.getItem("lastActivity");
+    const selectedSkin = localStorage.getItem("selectedSkin");
+    const autoBot = localStorage.getItem("autoBot");
+    const bust = localStorage.getItem("bust");
+    const bonus = localStorage.getItem("bonus");
+    const speed = localStorage.getItem("speed");
+
+    // Формируем объект userData
+    const userData = {
+        userId: userId,
+        balance: balance,
+        clickedKick: clickedKick,
+        clickedPublic: clickedPublic,
+        dogSkinP: dogSkinP,
+        legendarySkinP: legendarySkinP,
+        lastActivity: lastActivity,
+        selectedSkin: selectedSkin,
+        autoBot: autoBot,
+        bust: bust,
+        bonus: bonus,
+        speed: speed
+    };
+
+    // Отправляем данные на сервер с помощью fetch
+    fetch('https://borovs.onrender.com/api/user-data/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userData),
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log('Данные успешно отправлены на сервер');
+        } else {
+            console.error('Ошибка при отправке данных на сервер');
+        }
+    })
+    .catch(error => {
+        console.error('Произошла ошибка:', error);
+    });
+});
+
 
 function applyPassiveIncome() {
   if (localStorage.getItem("newFeatureButtonClicked") === "true") {
