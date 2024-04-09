@@ -8,16 +8,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const getUserId = window.Telegram.WebApp.initDataUnsafe.user.id;
     const userId = getUserId;
     const balance = localStorage.getItem("balance");
-    const clickedKick = localStorage.getItem("clickedKick");
-    const clickedPublic = localStorage.getItem("clickedPublic");
-    const dogSkinP = localStorage.getItem("dogSkinP");
-    const legendarySkinP = localStorage.getItem("legendarySkinP");
-    const lastActivity = localStorage.getItem("lastActivity");
+    const clickedKick = localStorage.getItem("buttonClicked1");
+    const clickedPublic = localStorage.getItem("buttonClicked0");
+    const dogSkinP = localStorage.getItem("newImageChangeButtonClicked");
+    const legendarySkinP = localStorage.getItem("imageChangeButtonClicked");
+    const lastActivity = localStorage.getItem("passiveIncomeStarted");
     const selectedSkin = localStorage.getItem("selectedSkin");
-    const autoBot = localStorage.getItem("autoBot");
-    const bust = localStorage.getItem("bust");
+    const autoBot = localStorage.getItem("newFeatureButtonClicked");
+    const bust = localStorage.getItem("coinsButtonClicked");
     const bonus = localStorage.getItem("bonus");
-    const speed = localStorage.getItem("speed");
+    const speed = localStorage.getItem("speedButtonClicked");
 
     // Формируем объект userData
     const userData = {
